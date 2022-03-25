@@ -2,38 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewpoint" content="device-width, Initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
 * {margin:0px; padding:0px;}
-    body {overflow:hidden}
-      p {font-family: 'Noticia Text', serif; font-size:27px; color:white}
+    body {overflow:hidden; background-image: url(https://www.welovesolo.com/wp-content/uploads/2015/01/p175aeururj346a0l5k1iq1130s9-details-1280x720.jpg)}
+      p  {font-family: 'Noticia Text', serif; font-size:70px; color:white; text-align:center}
 			h1 {font-family: 'Lobster', cursive; font-size:100px; color:white}
       h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
       h3 {font-family: 'Noticia Text', serif; font-size:27px; color:white}
-      .banner1  {position:absolute; top:0px; left:0px} .banner2 {position:absolute; top:0px; left:384px}  .banner3 {position:absolute; top:0px; left:768px} .banner4 {position:absolute; top:0px; left:1152px}
-      .coolbg {position:absolute; top:0px} .Mario {position:absolute; top:136px;left:20px} .Mario2 {position:absolute; top:412px;left:1192px} .Star {position:absolute; top:220px;left:1210px;transform:rotate(15deg)}
-      .title {position:relative; top:226px; left:325px}  .text {position:relative; top:246px; left:300px; text-shadow: 1.5px 1.5px 1.5px black}  .text2 {position:relative; top:296px; left:170px; text-shadow: 1.5px 1.5px 1.5px black}  .text3 {position:relative; top:322px; left:170px; text-shadow: 1.5px 1.5px 1.5px black}
+      div{text-align:center}
+      .outputbox {background-color:#ffa3ec; height:90px; margin:50px 50px 50px 50px; overflow:auto}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
+      .keyboard  {width:100%; float:bottom; position:absolute; bottom:50px;}
+/*It's not that I forgot about media queries, I just don't bother :P*/
     </style>
-      <title>Super Mario Sunshine | Angelo Miguel's Mario Selections</title>
+      <title>Mini Wordscapes thing assessment | Angelo Miguel Santos & Luke Villanuexa & Flint Cubillan</title>
   </head>
 <body>
- <img src="https://mario.wiki.gallery/images/thumb/1/1e/Super_Mario_3D_All_Stars_Flight_to_Delfino_Island.png/1200px-Super_Mario_3D_All_Stars_Flight_to_Delfino_Island.png" width="1536" class="coolbg" alt="A cool background that features an map of Isle Delfino and its surrounding islands">
-  <div>
-    <img src="https://www.nintendo.co.jp/switch/avp3a/assets/images/detail/img_gallery_thumb02_01.jpg" width="384" class="banner1" alt="Mario covered with goop at Delfino Plaza using the Squirt Nozzle">
-    <img src="https://www.nintendo.co.jp/switch/avp3a/assets/images/detail/img_gallery_thumb02_07.jpg" width="384" class="banner2" alt="Mario fighting Mecha-Bowser at Pinna Park">
-    <img src="https://www.nintendo.co.jp/switch/avp3a/assets/images/detail/img_gallery_thumb02_06.jpg" width="384" class="banner3" alt="Mario at Sirena Beach with some performers">
-    <img src="https://pbs.twimg.com/media/FEFJ3k4UUAUf0ua?format=png" width="384" class="banner4" alt="Mario using the Hover Nozzle on F.L.U.D.D. at Noki Bay (taken by me)">
-    <img src="https://web.archive.org/web/20210130192231im_/https://supermario3dallstars.nintendo.com/assets/img/home/sms/character.png" width="320" class="Mario" alt="A render of Mario using F.L.U.D.D.'s Hover Nozzle">
-    <img src="https://web.archive.org/web/20210313205301im_/https://supermario3dallstars.nintendo.com/assets/img/home/header/sms/character.png" width="340" class="Mario2" alt="A render of Mario wearing F.L.U.D.D. with a Shine Sprite-shaped object and some background behind them">
-    <img src="https://web.archive.org/web/20210214142317im_/https://supermario3dallstars.nintendo.com/assets/img/super-mario-sunshine/star.png" width="150" class="Star" alt="A render of a Shine Sprite">
-
+  <div class="outputbox">
+    <p id="keyboardoutput"></p>
   </div>
-    <h1 class="title">Super Mario Sunshine</h1>
-    <h2 class="text">The most charming Mario game ever. It has the best concepts in a Mario game!</h2>
-    <h2 class="text2">Angelo's travel tips:</h2>
-    <p class="text3">
-      1. Appreciate the one of the best Mario locations ever made by using the<br>flashiest moveset Mario has ever had in the jungle gym-style parts of the game.<br>
-      2. Instantly get refreshed not just by the sights, but also this game's<br>phenomenal cutscenes.<br>
-      3.Take a sun-drenched vacation from traditional Super Mario course themes<br>by visiting rural areas filled with fun characters to talk to.
-    </p>
+  <div class="clearbuttonoverlay">
+    <button onclick="document.getElementById('keyboardoutput').innerHTML = ''">Clear</button>
+  </div>
+<div class="keyboard">
+        <button onclick="document.getElementById('keyboardoutput').innerHTML += 'Q'">Q</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'W'">W</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'E'">E</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'R'">R</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'T'">T</button>
+        <button onclick="document.getElementById('keyboardoutput').innerHTML += 'Y'">Y</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'U'">U</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'I'">I</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'O'">O</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'P'">P</button>
+<br>    <button onclick="document.getElementById('keyboardoutput').innerHTML += 'A'">A</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'S'">S</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'D'">D</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'F'">F</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'G'">G</button>
+        <button onclick="document.getElementById('keyboardoutput').innerHTML += 'H'">H</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'J'">J</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'K'">K</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'L'">L</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += '<br>'">Enter</button>
+<br>    <button onclick="document.getElementById('keyboardoutput').innerHTML += 'Z'">Z</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'X'">X</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'C'">C</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'V'">V</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'B'">B</button>
+        <button onclick="document.getElementById('keyboardoutput').innerHTML += 'N'">N</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'M'">M</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += ','">,</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += '.'">.</button>
+<br>    <button onclick="document.getElementById('keyboardoutput').innerHTML += ' '">Space</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 </html>
