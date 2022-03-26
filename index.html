@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,21 +17,30 @@
       div{text-align:center}
       .outputbox {background-color:#ffa3ec; height:90px; margin:50px 50px 50px 50px; overflow:auto}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
       .keyboard  {width:100%; float:bottom; position:absolute; bottom:50px;}
+	  
+	  input {
+	  height: 30px;
+	  width: 150px;
+	  }
 /*It's not that I forgot about media queries, I just don't bother :P*/
     </style>
-      <title>Mini Wordscapes thing assessment | Angelo Miguel Santos & Luke Villanuexa & Flint Cubillan</title>
+      <title>Mini Wordscapes | Angelo & Luke & Flint Cubillan</title>
   </head>
 <body>
   <div class="outputbox">
-    <p id="keyboardoutput"></p>
+    <p id="test"></p>
   </div>
   <div class="clearbuttonoverlay">
-    <button onclick="document.getElementById('keyboardoutput').innerHTML = ''">Enter</button>
+    <button onclick="document.getElementById('test').innerHTML = ''">Reset</button>
   </div>
 <div class="keyboard">
-        <button onclick="document.getElementById('keyboardoutput').innerHTML += 'A'" id="buttonA">A</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'F'" id="buttonF">F</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'R'" id="buttonR">R</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'E'" id="buttonE">E</button> <button onclick="document.getElementById('keyboardoutput').innerHTML += 'M'" id="buttonM">M</button>
+        <button onclick="document.getElementById('test').innerHTML += 'A'" id="buttonA">A</button> <button onclick="document.getElementById('test').innerHTML += 'F'" id="buttonF">F</button> <button onclick="document.getElementById('test').innerHTML += 'R'" id="buttonR">R</button> <button onclick="document.getElementById('test').innerHTML += 'E'" id="buttonE">E</button> <button onclick="document.getElementById('test').innerHTML += 'M'" id="buttonM">M</button>
 </div>
 
+<div class="checker">
+<input type="button" value="Check" onclick="z()"><span id="test"></span>
+</div>
+	
 <script type="text/javascript">
     var buttons = document.getElementById("buttonA");
     buttons.innerHTML = '<img src="images\A.png" />';
@@ -46,6 +56,21 @@
 	
     var buttons = document.getElementById("buttonM");
     buttons.innerHTML = '<img src="images\M.png" />';
+	
+	function z()
+{
+var a=document.getElementById("test");
+if (document.getElementById("test") == "FREE")
+{
+document.getElementById('test').innerHTML= 'correct';
+}
+else
+{
+document.getElementById('test').innerHTML= 'wrong';
+
+}
+
+}
 </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
