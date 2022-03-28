@@ -9,13 +9,13 @@
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
 * {margin:0px; padding:0px;}
-    body {overflow:hidden; background-image: url(https://www.welovesolo.com/wp-content/uploads/2015/01/p175aeururj346a0l5k1iq1130s9-details-1280x720.jpg)}
+    body {overflow:hidden; background-image: cafe.png}
       p  {font-family: 'Noticia Text', serif; font-size:70px; color:white; text-align:center}
 			h1 {font-family: 'Lobster', cursive; font-size:100px; color:white}
       h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
       h3 {font-family: 'Noticia Text', serif; font-size:27px; color:white}
       div{text-align:center}
-      .outputbox {background-color:#ffa3ec; height:90px; margin:50px 50px 50px 50px; overflow:auto}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
+      .outputbox {background-color:#ffa3ec; height:90px; margin:50px 50px 50px 50px; overflow:auto; opacity:0.7}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
       .keyboard  {width:100%; float:bottom; position:absolute; bottom:50px;}
 	  
 	  input {
@@ -43,19 +43,14 @@
 	
 <script type="text/javascript">
     var buttons = document.getElementById("buttonA");
-    buttons.innerHTML = '<img src="images\A.png" />';
 	
     var buttons = document.getElementById("buttonF");
-    buttons.innerHTML = '<img src="images\F.png" />';
-	
-    var buttons = document.getElementById("buttonR");
-    buttons.innerHTML = '<img src="images\R.png" />';
 	
     var buttons = document.getElementById("buttonE");
-    buttons.innerHTML = '<img src="images\E.png" />';
+	
+    var buttons = document.getElementById("buttonR");
 	
     var buttons = document.getElementById("buttonM");
-    buttons.innerHTML = '<img src="images\M.png" />';
 	
 	function z()
 {
