@@ -7,21 +7,81 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
-* {margin:0px; padding:0px;}
-    body {overflow:hidden; background-image: url("https://raw.githubusercontent.com/nAMSantos/EpicComsciB-2-thesqueakuel/main/cafe.png")}
+
+	body {
+	background-image: url("https://raw.githubusercontent.com/nAMSantos/EpicComsciB-2-thesqueakuel/main/cafe.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+	}
       p  {font-family: 'Noticia Text', serif; font-size:70px; color:white; text-align:center}
 			h1 {font-family: 'Lobster', cursive; font-size:100px; color:white}
       h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
       h3 {font-family: 'Noticia Text', serif; font-size:27px; color:white}
       div{text-align:center}
-      .outputbox {background-color:#ffa3ec; height:90px; margin:50px 50px 50px 50px; overflow:auto; opacity:0.7}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
-      .keyboard  {width:1080px; float:bottom; position:absolute; bottom:50px;}
+      .outputbox {background-color:#ffa3ec; height:110px; margin:50px 50px 50px 50px; overflow:auto; opacity:0.7}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
+      .keyboard  {width:1920px; float:bottom; position:absolute; bottom:10px;}
 
 	  input {
 	  height: 30px;
 	  width: 150px;
 	  }
-/*It's not that I forgot about media queries, I just don't bother :P*/
+
+	  #buttonA {
+	  width: 140px;
+	  height: 150px;
+	  font-size: 30px;
+    position:absolute;
+    left:475px; top:-180px;
+	  background-color: rgba(0,0,0,0);
+	  border-color: rgba(0,0,0,0);
+	  color: rgba(0,0,0,0);
+
+	  }
+
+	  #buttonF {
+	  width: 80px;
+	  height: 110px;
+	  font-size: -70px;
+    position:absolute;
+    left:650px; top:-150px;
+	  background-color: rgba(0,0,0,0);
+	  border-color: rgba(0,0,0,0);
+	  color: rgba(0,0,0,0);
+	  }
+
+	  #buttonE {
+	  width: 180px;
+	  height: 120px;
+	  font-size: 30px;
+    position:absolute;
+    left:780px; top:-140px;
+	  background-color: rgba(0,0,0,0);
+	  border-color: rgba(0,0,0,0);
+	  color: rgba(0,0,0,0);
+	  }
+
+    #buttonR {
+	  width: 160px;
+	  height: 170px;
+	  font-size: 30px;
+    position:absolute;
+    left:930px; top:-180px;
+	  background-color: rgba(0,0,0,0);
+	  border-color: rgba(0,0,0,0);
+	  color: rgba(0,0,0,0);
+	  }
+
+	  #buttonM {
+	  width: 180px;
+	  height: 120px;
+	  font-size: 30px;
+    position:absolute;
+    left:1070px; top:-150px;
+	  background-color: rgba(0,0,0,0);
+ 	  border-color: rgba(0,0,0,0);
+	  color: rgba(0,0,0,0);
+	  }
+
     </style>
       <title>Mini Wordscapes | Angelo & Luke & Flint Cubillan</title>
   </head>
@@ -32,11 +92,11 @@
   <div class="clearbuttonoverlay">
     <button onclick="document.getElementById('test').innerHTML = ''">Reset</button>
   </div>
-<div class="keyboard"; display:hidden>
+<div class="keyboard">
   <button onclick="document.getElementById('test').innerHTML += 'A'" id="buttonA">A</button>
 	<button onclick="document.getElementById('test').innerHTML += 'F'" id="buttonF">F</button>
-	<button onclick="document.getElementById('test').innerHTML += 'R'" id="buttonR">R</button>
 	<button onclick="document.getElementById('test').innerHTML += 'E'" id="buttonE">E</button>
+	<button onclick="document.getElementById('test').innerHTML += 'R'" id="buttonR">R</button>
 	<button onclick="document.getElementById('test').innerHTML += 'M'" id="buttonM">M</button>
 </div>
 
