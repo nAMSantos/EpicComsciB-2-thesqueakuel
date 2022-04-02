@@ -1,137 +1,493 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewpoint" content="device-width, Initial-scale=1">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Wordscapes | Flint</title>
+</head>
+<style>
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: Arial;
+}
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Arapey&family=K2D:wght@300&family=Lobster&family=Noticia+Text&display=swap');
+body {
+    background-color: #FAD4C0;
+	background-image: urL("https://lh3.googleusercontent.com/omKfTpQEW_1xvKrjkT3YFYFlvk8YDUqepuD9QnLfZUYPgXNXHYAcOVz_uGt1F0bywZqb6Lt6U-GDih1Ek7Wx3K6OAQAg0_M4w1VOx0Bmq7LMlA7MSXXjhPXCnkB8pjAyw8AkK8jWJw=w2400");
+	background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+}
 
-	body {
-	background-image: url("https://raw.githubusercontent.com/nAMSantos/EpicComsciB-2-thesqueakuel/main/cafe.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-	}
-      p  {font-family: 'Noticia Text', serif; font-size:70px; color:white; text-align:center}
-			h1 {font-family: 'Lobster', cursive; font-size:100px; color:white}
-      h2 {font-family: 'Arapey', serif; font-size:37px; color:white}
-      h3 {font-family: 'Noticia Text', serif; font-size:27px; color:white}
-      div{text-align:center}
-      .outputbox {background-color:#ffa3ec; height:110px; margin:50px 50px 50px 50px; overflow:auto; opacity:0.7}  .clearbuttonoverlay {float:right; position:absolute; top:50px; right:50px}
-      .keyboard  {width:1920px; float:bottom; position:absolute; bottom:10px;}
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(auto, 1.25em));
+  grid-auto-rows: 3em;
+  gap: .25em;
+  justify-content: center;
+  margin-bottom: 80px;
+  margin-right: 70px;
+}
 
-	  input {
-	  height: 30px;
-	  width: 150px;
-	  }
+.key {
+  font-size: inherit;
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #64B6AC;
+  left: 40px;
+  color: white;
+  fill: white;
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  user-select: none;
+}
 
-	  #buttonA {
-	  width: 140px;
-	  height: 150px;
-	  font-size: 30px;
-    position:absolute;
-    left:475px; top:-180px;
-	  background-color: rgba(0,0,0,0);
-	  border-color: rgba(0,0,0,0);
-	  color: rgba(0,0,0,0);
+.keyspaceelonmusk {
+font-size: inherit;
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(
+    var(--hue, 200),
+    var(--saturation, 1%),
+    calc(var(--lightness-offset, 0%) + var(--lightness, 51%))
+  );
+  left: 40px;
+  color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  fill: rgba(0,0,0,0);
+  text-transform: uppercase;
+  border-radius: .25em;
+  cursor: pointer;
+  user-select: none;
+}
 
-	  }
+.key.large {
+  grid-column: span 3;
+  left: 40px;
+}
 
-	  #buttonF {
-	  width: 80px;
-	  height: 110px;
-	  font-size: -70px;
-    position:absolute;
-    left:650px; top:-150px;
-	  background-color: rgba(0,0,0,0);
-	  border-color: rgba(0,0,0,0);
-	  color: rgba(0,0,0,0);
-	  }
+.key > svg {
+  width: 1.75em;
+  height: 1.75em;
+}
 
-	  #buttonE {
-	  width: 180px;
-	  height: 120px;
-	  font-size: 30px;
-    position:absolute;
-    left:780px; top:-140px;
-	  background-color: rgba(0,0,0,0);
-	  border-color: rgba(0,0,0,0);
-	  color: rgba(0,0,0,0);
-	  }
+.key:hover, .key:focus {
+  --lightness-offset: 10%;
+}
 
-    #buttonR {
-	  width: 160px;
-	  height: 170px;
-	  font-size: 30px;
-    position:absolute;
-    left:930px; top:-180px;
-	  background-color: rgba(0,0,0,0);
-	  border-color: rgba(0,0,0,0);
-	  color: rgba(0,0,0,0);
-	  }
+.key.wrong {
+  --lightness: 23%;
+}
 
-	  #buttonM {
-	  width: 180px;
-	  height: 120px;
-	  font-size: 30px;
-    position:absolute;
-    left:1070px; top:-150px;
-	  background-color: rgba(0,0,0,0);
- 	  border-color: rgba(0,0,0,0);
-	  color: rgba(0,0,0,0);
-	  }
+.key.wrong-location {
+  --hue: 49;
+  --saturation: 51%;
+  --lightness: 47%;
+}
 
-    </style>
-      <title>Mini Wordscapes | Angelo & Luke & Flint Cubillan</title>
-  </head>
+.key.correct {
+  --hue: 115;
+  --saturation: 29%;
+  --lightness: 43%;
+}
+
+.guess-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  grid-template-columns: repeat(4, 4em);
+  grid-template-rows: repeat(2, 4em);
+  gap: 4px;
+  margin-left: -136px;
+  margin-bottom: 300px; 
+  
+}
+
+#tile {
+  font-size: 2em;
+  color: white;
+background-color: #64B6AC;
+  border-radius: .25em;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: transform 250ms linear;
+}
+
+#tile[data-state="active"] {
+  border-color: hsl(200, 1%, 34%);
+}
+
+#tile[data-state="wrong"] {
+  border: none;
+  background-color: hsl(240, 2%, 23%);
+}
+
+#tile[data-state="wrong-location"] {
+  border: none;
+  background-color: hsl(49, 51%, 47%);
+}
+
+#tile[data-state="correct"] {
+  border: none;
+  background-color: hsl(115, 29%, 43%);
+}
+
+#tile.shake {
+  animation: shake 250ms ease-in-out;
+}
+
+#tile.dance {
+  animation: dance 500ms ease-in-out;
+}
+
+#tile.flip {
+  transform: rotateX(90deg);
+}
+
+@keyframes shake {
+  10% {
+    transform: translateX(-5%);
+  }
+
+  30% {
+    transform: translateX(5%);
+  }
+
+  50% {
+    transform: translateX(-7.5%);
+  }
+
+  70% {
+    transform: translateX(7.5%);
+  }
+
+  90% {
+    transform: translateX(-5%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes dance {
+  20% {
+    transform: translateY(-50%);
+  }  
+
+  40% {
+    transform: translateY(5%);
+  }  
+
+  60% {
+    transform: translateY(-25%);
+  }  
+
+  80% {
+    transform: translateY(2.5%);
+  }  
+
+  90% {
+    transform: translateY(-5%);
+  }  
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.alert-container {
+  position: fixed;
+  top: 10vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert {
+  pointer-events: none;
+  background-color: hsl(204, 7%, 85%);
+  padding: .75em;
+  border-radius: .25em;
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+  margin-bottom: .5em;
+}
+
+.alert:last-child {
+  margin-bottom: 0;
+}
+
+.alert.hide {
+  opacity: 0;
+}
+
+.score {
+margin-left: 30px;
+position: absolute;
+}
+
+</style>
 <body>
-  <div class="outputbox">
-    <p id="test"></p>
+<div class="score">
+   <h1>Score:<h1 id="parcounter">0</h1></h1>
   </div>
-  <div class="clearbuttonoverlay">
-    <button onclick="document.getElementById('test').innerHTML = ''">Reset</button>
+  <div class="alert-container" data-alert-container></div>
+  <div data-guess-grid class="guess-grid">
+  
+    <div id="tile"></div>
+    <div id="tile"></div>
+	<div id="tile"></div>
+	<div id="tile"></div>
   </div>
-<div class="keyboard">
-  <button onclick="document.getElementById('test').innerHTML += 'A'" id="buttonA">A</button>
-	<button onclick="document.getElementById('test').innerHTML += 'F'" id="buttonF">F</button>
-	<button onclick="document.getElementById('test').innerHTML += 'E'" id="buttonE">E</button>
-	<button onclick="document.getElementById('test').innerHTML += 'R'" id="buttonR">R</button>
-	<button onclick="document.getElementById('test').innerHTML += 'M'" id="buttonM">M</button>
-</div>
+  
+  <div data-keyboard class="keyboard">
+    <button data-enter class="key large">SUBMIT</button>
+    <button class="key" data-key="A">A</button>
+    <button class="key" data-key="F">F</button>
+    <button class="key" data-key="E">E</button>
+	<button class="key" data-key="R">R</button>
+	<button class="key" data-key="M">M</button>
+	<button class="key" data-key="B">B</button>
+	<button class="key" data-key="C">C</button>
+	 
+  </div>
+ 
+  <script>
+  const targetWords = [
+	"fear"
+]
 
-<div class="checker">
-<input type="button" value="Check" onclick="z()"><span id="test"></span>
-</div>
+const dictionary = [
+	"fear"
+]
+const WORD_LENGTH = 4
+const FLIP_ANIMATION_DURATION = 500
+const DANCE_ANIMATION_DURATION = 500
+const keyboard = document.querySelector("[data-keyboard]")
+const alertContainer = document.querySelector("[data-alert-container]")
+const guessGrid = document.querySelector("[data-guess-grid]")
+const offsetFromDate = new Date(2022, 0, 1)
+const msOffset = Date.now() - offsetFromDate
+const dayOffset = msOffset / 1000 / 60 / 60 / 24
+const targetWord = targetWords[Math.floor(dayOffset)]
 
-<script type="text/javascript">
-    var buttons = document.getElementById("buttonA");
+startInteraction()
 
-    var buttons = document.getElementById("buttonF");
-
-    var buttons = document.getElementById("buttonE");
-
-    var buttons = document.getElementById("buttonR");
-
-    var buttons = document.getElementById("buttonM");
-
-	function z()
-{
-var a=document.getElementById("test");
-if (document.getElementById("test") == "FREE")
-{
-document.getElementById('test').innerHTML= 'correct';
+function startInteraction() {
+  document.addEventListener("click", handleMouseClick)
+  document.addEventListener("keydown", handleKeyPress)
 }
-else
-{
-document.getElementById('test').innerHTML= 'wrong';
 
+function stopInteraction() {
+  document.removeEventListener("click", handleMouseClick)
+  document.removeEventListener("keydown", handleKeyPress)
 }
 
+function handleMouseClick(e) {
+  if (e.target.matches("[data-key]")) {
+    pressKey(e.target.dataset.key)
+    return
+  }
+
+  if (e.target.matches("[data-enter]")) {
+    submitGuess()
+	deleteKey()
+	deleteKey()
+	deleteKey()
+	deleteKey()
+    return
+  }
+
+  if (e.target.matches("[data-delete]")) {
+    deleteKey()
+    return
+  }
 }
-</script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+
+function handleKeyPress(e) {
+  if (e.key === "Enter") {
+    submitGuess()
+    return
+  }
+
+  if (e.key === "Backspace" || e.key === "Delete") {
+    deleteKey()
+    return
+  }
+
+  if (e.key.match(/^[a-z]$/)) {
+    pressKey(e.key)
+    return
+  }
+}
+
+function pressKey(key) {
+  const activeTiles = getActiveTiles()
+  if (activeTiles.length >= WORD_LENGTH) return
+  const nextTile = guessGrid.querySelector(":not([data-letter])")
+  nextTile.dataset.letter = key.toLowerCase()
+  nextTile.textContent = key
+  nextTile.dataset.state = "active"
+}
+
+function deleteKey() {
+  const activeTiles = getActiveTiles()
+  const lastTile = activeTiles[activeTiles.length - 1]
+  const lastTilee = activeTiles[activeTiles.length - 0]
+  if (lastTile == null) return
+  lastTile.textContent = ""
+  delete lastTile.dataset.state
+  delete lastTile.dataset.letter
+}
+
+function submitGuess() {
+  const activeTiles = [...getActiveTiles()]
+  if (activeTiles.length !== WORD_LENGTH) {
+showAlert("Answer should be 4 letters.")
+    shakeTiles(activeTiles)
+    return
+  }
+
+  const guess = activeTiles.reduce((word, tile) => {
+    return word + tile.dataset.letter
+  }, "")
+
+  if (!dictionary.includes(guess)) {
+    showAlert("Sorry, it's not a real word. Try again.")
+    shakeTiles(activeTiles)
+    return
+  }
+	
+  stopInteraction()
+  activeTiles.forEach((...params) => flipTile(...params, guess))
+}
+
+function flipTile(tile, index, array, guess) {
+  const letter = tile.dataset.letter
+  const key = keyboard.querySelector(`[data-key="${letter}"i]`)
+  setTimeout(() => {
+    tile.classList.add("flip")
+  }, (index * FLIP_ANIMATION_DURATION) / 2)
+
+  tile.addEventListener(
+    "transitionend",
+    () => {
+      tile.classList.remove("flip")
+      if (dictionary.includes(guess)) { 	var counter = 0; 
+        tile.dataset.state = "correct"
+        key.classList.add("correct")
+		counter++; document.getElementById('parcounter').innerHTML = counter;
+      } else if (targetWord.includes(letter)) {
+        tile.dataset.state = "wrong-location"
+        key.classList.add("wrong-location")
+      } else {
+        tile.dataset.state = "wrong"
+        key.classList.add("wrong")
+      }
+
+      if (index === array.length - 1) {
+        tile.addEventListener(
+          "transitionend",
+          () => {
+            startInteraction()
+            checkWinLose(guess, array)
+          },
+          { once: true }
+        )
+      }
+    },
+    { once: true }
+  )
+}
+
+function getActiveTiles() {
+  return guessGrid.querySelectorAll('[data-state="active"]')
+}
+
+function showAlert(message, duration = 1000) {
+  const alert = document.createElement("div")
+  alert.textContent = message
+  alert.classList.add("alert")
+  alertContainer.prepend(alert)
+  if (duration == null) return
+
+  setTimeout(() => {
+    alert.classList.add("hide")
+    alert.addEventListener("transitionend", () => {
+      alert.remove()
+    })
+  }, duration)
+}
+
+function shakeTiles(tiles) {
+  tiles.forEach(tile => {
+    tile.classList.add("shake")
+    tile.addEventListener(
+      "animationend",
+      () => {
+        tile.classList.remove("shake")
+      },
+      { once: true }
+    )
+  })
+}
+
+function checkWinLose(guess, tiles) {
+  if (guess === targetWord) {
+    showAlert("You Win", 5000)
+    danceTiles(tiles)
+    stopInteraction()
+    return
+  }
+
+  const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])")
+  if (remainingTiles.length === 0) {
+    showAlert(targetWord.toUpperCase(), null)
+    stopInteraction()
+  }
+}
+
+function danceTiles(tiles) {
+  tiles.forEach((tile, index) => {
+    setTimeout(() => {
+      tile.classList.add("dance")
+      tile.addEventListener(
+        "animationend",
+        () => {
+          tile.classList.remove("dance")
+        },
+        { once: true }
+      )
+    }, (index * DANCE_ANIMATION_DURATION) / 5)
+  })
+  
+}
+  </script>
+</body>
 </html>
