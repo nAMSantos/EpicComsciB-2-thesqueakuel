@@ -77,8 +77,8 @@ body {
   grid-template-rows: repeat(2, 64px);
   gap: 4px;
   margin-left: -136px;
-  margin-bottom: 300px; 
-  
+  margin-bottom: 300px;
+
 }
 
 #tile {
@@ -160,21 +160,16 @@ position: absolute;
 
 </style>
 </head>
-	
+
 
 <body>
 <div class="score">
-   <h1>Score:<h1 id="parcounter">0</h1></h1>
+   <h1>Score:</h1> <h1 id="parcounter">0</h1>
   </div>
   <div class="alert-container" data-alert-container></div>
   <div data-guess-grid class="guess-grid">
-  
-    <div id="tile"></div>
-    <div id="tile"></div>
-	<div id="tile"></div>
-	<div id="tile"></div>
-  </div>
-  
+</div>
+
   <div data-keyboard class="keyboard">
     <button data-enter class="key large">SUBMIT</button>
     <button class="key" data-key="A">A</button>
@@ -190,7 +185,7 @@ position: absolute;
       </svg>
     </button>
   </div>
- 
+
   <script>
   const targetWords = [
 	"fear",
@@ -376,7 +371,7 @@ showAlert("Answer should be 4 letters.")
     shakeTiles(activeTiles)
     return
   }
-	
+
   stopInteraction()
   activeTiles.forEach((...params) => flipTile(...params, guess))
 }
@@ -392,7 +387,7 @@ function flipTile(tile, index, array, guess) {
     "transitionend",
     () => {
       tile.classList.remove("flip")
-      if (dictionary.includes(guess)) { 	var counter = 0; 
+      if (dictionary.includes(guess)) { 	var counter = 0;
         tile.dataset.state = "correct"
         key.classList.add("correct")
 		counter++; document.getElementById('parcounter').innerHTML = counter;
@@ -479,7 +474,7 @@ function danceTiles(tiles) {
       )
     }, (index * DANCE_ANIMATION_DURATION) / 5)
   })
-  
+
 }
   </script>
 </body>
