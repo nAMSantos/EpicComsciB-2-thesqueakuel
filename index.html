@@ -168,6 +168,11 @@ position: absolute;
   </div>
   <div class="alert-container" data-alert-container></div>
   <div data-guess-grid class="guess-grid">
+
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
+    <div class="tile"></div>
 </div>
 
   <div data-keyboard class="keyboard">
@@ -226,7 +231,8 @@ position: absolute;
 	"race",
 	"ream",
 	"mear",
-  "rear"
+  "rear",
+  "beef",
 ]
 
 const dictionary = [
@@ -268,7 +274,8 @@ const dictionary = [
 	"race",
 	"ream",
 	"mear",
-  "rear"
+  "rear",
+  "beef"
 ]
 const WORD_LENGTH = 4
 const FLIP_ANIMATION_DURATION = 500
@@ -390,7 +397,7 @@ function flipTile(tile, index, array, guess) {
       if (dictionary.includes(guess)) { 	var counter = 0;
         tile.dataset.state = "correct"
         key.classList.add("correct")
-		counter++; document.getElementById('parcounter').innerHTML = counter;
+		counter++; document.getElementsByClassName('parcounter').innerHTML = counter;
       } else if (targetWord.includes(letter)) {
         tile.dataset.state = "wrong-location"
         key.classList.add("wrong-location")
