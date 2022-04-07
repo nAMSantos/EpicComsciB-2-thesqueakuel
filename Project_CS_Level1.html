@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -58,7 +59,7 @@ z-index: 999;
             function checkImage(event) {
                 var x = event.clientX;
                 var y = event.clientY;
-                if(x>=854 && x<=945 && y>=256 && y<=479) {
+                if(x>=906 && x<=974 && y>=304 && y<=467) {
                     alert("You found the dishwashing soap!");
 					location.replace("Project_CS_Level2.html")
                 } else {
@@ -75,6 +76,7 @@ z-index: 999;
 	   </header>
                 <div class="finditbro">
                     <img src="https://lh3.googleusercontent.com/Tp6i-0sYxISnYNNSUWkNKCwif9IsJEfwevS-IEL-5uwPk-1O6P13EGfH-VnDGsNintqybv1IDSTkKzsOlqVsPRB7LNKiZJ_8ETF-MTB8BqkB2j0I2krtE6Ma66gG5zPgQe6VmK1-5Q=w2400" border="solid" onmouseout="clearCoords(event)" onmousemove="showCoords(event)" onclick="checkImage(event)">
+			   <p id="myCoords"></p>
 			   </div>
         
         
