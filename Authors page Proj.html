@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Authors Page</title>
+    <!--Meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!--Boxicons-->
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+}
+
+body {
+background-image: urL("https://lh3.googleusercontent.com/ktKJasRr8dYhN76KefhDFqenNC3qvxrCV5VoYT4aGE5XQuoUhVMgic4H-VQnXaOFBX38QG3UiMZk-WOdy3kHvvcEhbWnkuMc7lUHzZH6XBphDPSyITP5x1hxwFuB4wqRMoE7UAgaZw=w2400");
+  margin: 0;
+  padding: 0;
+}
+.container{
+margin-top: 20px;
+background-image: urL("https://lh3.googleusercontent.com/ktKJasRr8dYhN76KefhDFqenNC3qvxrCV5VoYT4aGE5XQuoUhVMgic4H-VQnXaOFBX38QG3UiMZk-WOdy3kHvvcEhbWnkuMc7lUHzZH6XBphDPSyITP5x1hxwFuB4wqRMoE7UAgaZw=w2400");
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+	.footer-distributed .footer-center p{
+	display: inline-block;
+	color: black;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+	font-size: 20px;
+}
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  black;
+	font-size: 17px;
+	font-weight: 200;
+	margin: 0;
+}
+}
+@media only screen and (max-width: 360px){
+.footer-distributed{
+	background: #D8D5D2;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 360px;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  black;
+	font-size: 15px;
+	font-weight: 200;
+	margin: 0;
+}
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: black;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+	font-size: 17px;
+}
+}
+h3 {
+font-size: 30px;
+margin-left: 50px;
+font-weight: 1;
+}
+
+li{
+padding-top: 10px;
+}
+.buttons{
+  padding: 15px 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background-color: #7C8981;
+  border: none;
+  border-radius: 15px;
+   box-shadow: 0 9px #999;
+}
+.sidenav{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: #424F5C;
+  padding: 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+}
+.sidenav.open{
+  width: 250px;
+}
+.sidenav .details{
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sidenav .details .icon{
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidenav .details .namelogo{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.sidenav.open .details .icon,
+.sidenav.open .details .namelogo{
+  opacity: 1;
+}
+.sidenav .details #btn{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: all 0.4s ease;
+  font-size: 23px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.sidenav.open .details #btn{
+  text-align: right;
+}
+.sidenav i{
+  color: #fff;
+  height: 60px;
+  min-width: 50px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 60px;
+}
+.sidenav .navigate{
+  margin-top: 20px;
+  height: 100%;
+}
+.sidenav li{
+  position: relative;
+  margin: 8px 0;
+  list-style: none;
+}
+.sidenav li .tooltip{
+  position: absolute;
+  top: -20px;
+  left: calc(100% + 15px);
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidenav li:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidenav.open li .tooltip{
+  display: none;
+}
+
+.sidenav li a{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  background: #424F5C;
+}
+.sidenav li a:hover{
+  background: #FFF;
+}
+.sidenav li a .links{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.sidenav.open li a .links{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidenav li a:hover .links,
+.sidenav li a:hover i{
+  transition: all 0.5s ease;
+  color: #424F5C;
+}
+.sidenav li i{
+  height: 50px;
+  line-height: 50px;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.sidenav input{
+  font-size: 15px;
+  color: #FFF;
+  font-weight: 400;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  width: 50px;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  background: #8C9CAA;
+}
+.sidenav.open input{
+  padding: 0 20px 0 50px;
+  width: 100%;
+}
+.sidenav .bx-search{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #8C9CAA;
+  color: #FFF;
+}
+.sidenav.open .bx-search:hover{
+  background: #8C9CAA;
+  color: #FFF;
+}
+.sidenav .bx-search:hover{
+  background: #FFF;
+  color: #8C9CAA;
+}
+
+.sidenav li.profile{
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: #8C9CAA;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.sidenav.open li.profile{
+  width: 250px;
+}
+.sidenav li .profile_details{
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.sidenav li img{
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+.sidenav li.profile .name,
+.sidenav li.profile .subname{
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  white-space: nowrap;
+}
+.sidenav li.profile .subname{
+  font-size: 12px;
+}
+.sidenav .profile #log_out{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: #8C9CAA;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+.sidenav.open .profile #log_out{
+  width: 50px;
+  background: none;
+}
+.main-section {
+  position: relative;
+  background: white;
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+.sidenav.open ~ .main-section{
+  left: 250px;
+  width: calc(100% - 250px);
+}
+
+.header {
+position: relative;
+  background: #8C9CAA;
+  height: 70px;
+  top: 0;
+  width: 100%;
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.header .text{
+  display: inline-block;
+  color: #11101d;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px
+}
+.footer{
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+
+@media (max-width: 420px) {
+  .sidenav li .tooltip {
+    display: none;
+	}
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+		.realheader {
+  overflow: hidden;
+  background-color: #424F5C  ;
+  padding: 20px 10px;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+
+.realheader a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 2px;
+  
+}
+
+
+.realheader a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.realheader a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.realheader a.active {
+  background-color:#ddd ;
+  color: white;
+}
+
+
+.header-right {
+  float: right;
+}
+
+        .row {
+            margin-top: 40px;
+            margin-bottom: 50px;
+        }
+		img{
+		object-fit: cover;
+		}
+
+        .yahyah {
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-left: 70px;
+            margin-right: auto;
+            border: groove 8px #800080;
+        }
+		.yahyah2{
+		display: none;
+		}
+		.cubillan{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+			margin-left: 100px;
+            border: groove 8px #FFA500;
+		}
+		.cubillan2{
+		display: none;
+		}
+		.villanueva{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-left: 70px;
+            margin-right: auto;
+            border: groove 8px #DAA520;
+		}
+		.villanueva2{
+		display: none;
+		}
+		.lansangan{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-left: 100px;
+            margin-right: auto;
+            border: groove 8px #90EE90;
+
+		}
+		.lansangan2{
+		display: none;
+		}
+		.esguerra{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-left: 70px;
+            margin-right: auto;
+            border: groove 8px Red;
+		}
+		.esguerra2{
+		display: none;
+		}
+		.jiban{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin-left: 100px;
+            margin-right: auto;
+            border: inset 8px Blue;
+		}
+		.jiban2{
+		display: none;
+		}
+		.secret{
+		display: none;
+		}
+		.secret2{
+		display:none;
+		}
+		.secret3{
+		display:none;
+		}
+		.main-section{
+		background-color: #8C9CAA;
+		}
+
+        .col-sm-8 {
+            float: left;
+            margin: auto;
+            height: auto;
+            width: 720px;
+            height: 270px;
+        }
+
+        .col-sm-4 {
+            float: left;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+		.team{
+		text-align: center;
+		text-shadow: 3px 3px #C0C0C0;
+		color: white;
+		font-size: 70px;
+		}
+        .flip-box {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+			margin-left: 50px;
+        }
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        .flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            border-radius: 25px;
+			border-width: 15px;
+			border-style: outset;
+			border-color: #708090;
+            background: #D8D5D2;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+        }
+        .flip-box-front {
+            background-color: #D8D5D2 ;
+            color: black;
+        }
+        .flip-box-back {
+            background-color: #D8D5D2;
+
+            transform: rotateY(180deg);
+        }
+
+        .flip-box-front img {
+            width: 100%;
+			height: 100%;
+            border-radius: 25px;
+			max-width: 100%;
+        }
+
+        .flip-box-back p {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .pinya{
+		text-align: center;
+		text-shadow: 3px 3px #DDA0DD;
+		color: #800080;
+		margin-top: 80px;
+		font-size: 58px;
+		}
+		.pk{
+		color: #800080;
+		text-shadow: 3px 3px #DDA0DD ;
+		}
+		.pk1{
+		color: #800080;
+		}
+		.lourdes{
+		text-align: center;
+		text-shadow: 3px 3px #E64432;
+		color: #1E6B2D;
+		margin-top: 80px;
+		font-size: 58px;
+		}
+		.fg{
+		text-shadow: 3px 3px #E64432;
+		color: #1E6B2D;
+		}
+		.fg1{
+		color: #1E6B2D;
+		}
+		.lukee{
+		text-align: center;
+		text-shadow: 3px 3px #E6321E;
+		color: #0078ff;
+		margin-top: 80px;
+		font-size: 58px;
+		}
+		.a{
+		text-shadow: 3px 3px #E6321E;
+		color: #0078ff ;
+		}
+		.a1{
+		color: #0078ff;
+		}
+
+	@media only screen and (max-width: 1024px) {
+	 .col-sm-8 {
+            float: left;
+            margin: auto;
+            height: auto;
+            width: 47vw;
+            height: 30vw;
+			
+        }
+		.team{
+		margin-left: 0px;
+		padding-left: 0px;
+		color: white;
+		}
+		.col-sm-4{
+		padding-left: 0px;
+		padding-right: 0px;
+		}
+		.flip-box{
+		margin-left: 0px;
+		}
+		.cubillan{
+		margin-left: 20px;
+		}
+		.
+
+		}
+		.jiban{
+		margin-left: 20px;
+		}
+		.yahyah{
+		margin-left: 30px;
+		}
+		.villanueva{
+		margin-left: 30px;
+		}
+		.esguerra{
+		margin-left: 30px;
+		}
+			.pk1{
+		font-size: 15px;
+		}
+		.fg1{
+		font-size: 17px;
+		}
+		.a1{
+		font-size: 17px;
+		}
+		.l1{
+		font-size: 15px;
+		}
+		.k1{
+		font-size: 15px;
+		}
+		.jm1{
+		font-size: 16px;
+		}
+		.lizan{
+		margin-top: 60px;
+		}
+		.pinya{
+		margin-top: 60px;
+		}
+		}
+		
+	 @media only screen and (max-width: 768px){
+
+	   .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            border-radius: 25px;
+			border-width: 15px;
+			border-style: outset;
+			border-color: #708090;
+            background: #D8D5D2;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden; 
+        }
+
+		.col-sm-8{
+		margin-left: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		}
+		
+		.col-sm-4{
+		display: none;
+		}
+		.flip-box {
+            background-color: transparent;
+            width: 400px;
+            height: 300px;
+            perspective: 1000px;
+            /* Remove this if you don't want the 3D effect */
+			position: relative;
+			margin-left: 100px;
+        }
+		   .yahyah {
+	
+			display: none;
+        }
+			.yahyah2{
+			  max-width: 100%;
+            width: 100%;
+  
+            height: 30vw;
+            display: block;
+			object-fit: cover;	
+		
+		}
+		.p{
+		font-size: 10px;
+		}
+		.cubillan{
+	
+			display: none
+		}
+	
+		.cubillan2{
+            max-width: 100%;
+            width: 100%;
+  
+            height: 30vw;
+            display: block;
+			object-fit: cover;	
+		
+		}
+		.villanueva{
+			display: none;
+		}
+		.villanueva2{
+		 max-width: 100%;
+            width: 100%;
+  
+            height: 30vw;
+            display: block;
+			object-fit: cover;	
+		
+		}
+
+		}
+        @media only screen and (max-width: 360px){
+           
+            .col-sm-8 {
+            float: left;
+            margin: 0px;
+            height: auto;
+			margin-left: 0px;
+        }
+		.row{
+		margin-right: 0px;
+		}
+		.team{
+		font-size: 50px;
+		color: white;
+		}
+		.col-sm-4{
+		display: none;
+		}
+		.pinya{
+		text-align: center;
+		text-shadow: 3px 3px #DDA0DD;
+		color: #800080;
+		margin-top: 80px;
+		font-size: 11vw;
+		}
+		.lourdes{
+		text-align: center;
+		text-shadow: 3px 3px #1E6B2D;
+		color: #FFA500;
+		margin-top: 80px;
+		font-size: 11vw;
+		}
+		.lukee{
+		text-align: center;
+		text-shadow: 3px 3px #E6321E;
+		color: #0078ff;
+		margin-top: 80px;
+		font-size: 11vw;
+		}
+		.lizan{
+		text-align: center;
+		text-shadow: 3px 3px #008000;
+		color: #90EE90;
+		margin-top: 80px;
+		font-size: 11vw;
+		}
+	
+		 .yahyah {
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 61vw;
+            height: 61vw;
+            display: block;
+            margin-left: 70px;
+            margin-right: auto;
+            border: groove 8px #800080;
+			display: none;
+        }
+		.secret{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 61vw;
+            height: 61vw;
+            display: block;
+			margin-left: 90px;
+            border: groove 8px #FFA500;
+		display: none;
+		}
+		.cubillan{
+		display: none;
+           
+		}
+		.villanueva{
+		float: left;
+            border-radius: 50%;
+            max-width: 100%;
+            width: 50%;
+            width: 61vw;
+            height: 61vw;
+            display: block;
+            margin-left: 70px;
+            margin-right: auto;
+            border: groove 8px #DAA520;
+			display: none;
+		}
+		
+		
+</style>
+   </head>
+     
+  
+
+<body>
+   
+    <div class="container">
+        <h1 class="team">About The Authors</h1>
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="https://lh3.googleusercontent.com/R8uxz6dHtmSCvFF90zoguQkzdTxAvhEiD2eh8zcjpu4vCyxaGebIYUE78UvpipOm_wcXWve4QB1OZsq3Vi2sVywEI3O-jcJD9CVm-KKAaWOELEGpEz8fgvUtvdf6ytNzSm0MjzJ4TQ=w2400" class="yahyah" alt="nyah">
+            </div>
+            <div class="col-sm-8">
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+						 <img src="https://lh3.googleusercontent.com/R8uxz6dHtmSCvFF90zoguQkzdTxAvhEiD2eh8zcjpu4vCyxaGebIYUE78UvpipOm_wcXWve4QB1OZsq3Vi2sVywEI3O-jcJD9CVm-KKAaWOELEGpEz8fgvUtvdf6ytNzSm0MjzJ4TQ=w2400" class="yahyah2" alt="nyah">
+                            <h1 class="pinya"> Angelo Miguel Santos </h1>
+                        </div>
+                        <div class="flip-box-back">
+                            <h1 class="pk">Angelo</h1>
+                            <p class="pk1">Angelo is also a Grade 9-Pinatubo student. He's a Pinatubo student in Grade 9. He contributed to the project's completion by applying his technical skills and developing the Github page.</p>
+                        </div>
+                    </div>
+                </div>
+				</div>
+            </div>
+        <div class="row">
+		<img src="https://lh3.googleusercontent.com/ls8BiWqgVxdq6bIyE9EQ4I_18v6U1kXQuf8vCLnEN5HBJHtaAAGI7Ww65D9h4Ij6F32Lgp0g_c_1E6AWhn45bedhbS4akvCCcUsAT9MrOwXEooPzSM_qxCDkiLx79fTlTW_FX2LEtA=w2400" class="secret" alt="flint">
+            <div class="col-sm-8">
+                <div class="flip-box">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+						<img src="https://lh3.googleusercontent.com/ls8BiWqgVxdq6bIyE9EQ4I_18v6U1kXQuf8vCLnEN5HBJHtaAAGI7Ww65D9h4Ij6F32Lgp0g_c_1E6AWhn45bedhbS4akvCCcUsAT9MrOwXEooPzSM_qxCDkiLx79fTlTW_FX2LEtA=w2400" class="cubillan2" alt="flint">
+						<h1 class="lourdes"> Flint Cubillan </h1>
+                        </div>
+                        <div class="flip-box-back">
+                            <h1 class="fg">Flint </h1>
+                            <p class="fg1">Flint belongs to 9-Pinatubo. He is an avid gamer. He created the different level page of the game, the author page and a tester/ checker of codes before finalizing for submission.</p>
+                        </div>
+                    </div>
+                </div>
+				</div>
+            <div class="col-sm-4">
+                <img src="https://lh3.googleusercontent.com/ls8BiWqgVxdq6bIyE9EQ4I_18v6U1kXQuf8vCLnEN5HBJHtaAAGI7Ww65D9h4Ij6F32Lgp0g_c_1E6AWhn45bedhbS4akvCCcUsAT9MrOwXEooPzSM_qxCDkiLx79fTlTW_FX2LEtA=w2400" class="cubillan" alt="flint">
+			</div>
+        </div>
+
+    
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="https://lh3.googleusercontent.com/8tuMuW-zfkaT_8LFMRCptu5omGq0bCFAbaudPocMCeSIzt_K3-lyNrxFS2FpoYmQIVyX2D989HNelQ7-GoRylZzkrzX_sra5LaWmQOLwtrj53Dasr8hzgaiSo1F77zfIe_jsJPcFTQ=w2400"
+                class="villanueva" alt="avy">
+        </div>
+        <div class="col-sm-8">
+		<div class="flip-box">
+		<div class="flip-box-inner">
+		<div class="flip-box-front">
+		  <img src="https://lh3.googleusercontent.com/8tuMuW-zfkaT_8LFMRCptu5omGq0bCFAbaudPocMCeSIzt_K3-lyNrxFS2FpoYmQIVyX2D989HNelQ7-GoRylZzkrzX_sra5LaWmQOLwtrj53Dasr8hzgaiSo1F77zfIe_jsJPcFTQ=w2400" class="villanueva2" alt="avy">
+		<h1 class="lukee"> Luke Villanueva </h1>
+		</div>
+		<div class="flip-box-back">
+            <h1 class="a">Luke </h1>
+            <p class="a1">Luke is also a Grade-9 Pinatubo student. He enjoys listening to all types of music and playing valorant in his spare time. He would appreciate if you add him, Maho#4875. He contributed to the project's success by applying his coding skills. Luke also designed the congratulations page.</p>
+			</div>
+        </div>
+		</div>
+		
+		</div>
+    </div>
+   
+</body>
+</html>
